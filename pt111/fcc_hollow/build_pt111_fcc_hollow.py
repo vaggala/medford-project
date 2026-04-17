@@ -21,7 +21,7 @@ for atom in slab:
         break
 
 if fcc_atom is None:
-    raise ValueError("could not find a pt atom in the third layerm :(")
+    raise ValueError("could not find a pt atom in the third layer :(")
 
 x_fcc = fcc_atom.position[0]
 y_fcc = fcc_atom.position[1]
@@ -40,6 +40,6 @@ co = Atoms(
 
 slab += co
 
-write("pt111_fcc_hollow.xyz", slab)
+write("pt111_fcc_hollow.traj", slab)
 
-print(slab, "Wrote pt111_fcc_hollow.xyz")
+print(slab, "Wrote pt111_fcc_hollow.traj")

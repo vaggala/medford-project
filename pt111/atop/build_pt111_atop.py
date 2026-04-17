@@ -38,6 +38,6 @@ co = Atoms(
 slab += co # add CO to slab :)
 
 # DEBUG
-write("pt111_atop.xyz", slab)
-print(slab, "wrote pt111_atop.xyz")
+write("pt111_atop.traj", slab)
+print(slab, "wrote pt111_atop.traj")
 print(f"Using atop x,y = ({x_top}, {y_top})")
