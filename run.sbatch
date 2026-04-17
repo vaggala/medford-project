@@ -1,46 +1,86 @@
 #!/bin/bash
-#SBATCH --job-name=co_adsorption
-#SBATCH --output=job.out
-#SBATCH --error=job.err
-#SBATCH --time=04:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+# SBATCH --job-name=co_adsorption
+# SBATCH --output=logs/%x_%j.out
+# SBATCH --error=logs/%x_%j.err
+# SBATCH --time=04:00:00
+# SBATCH --nodes=1
+# SBATCH --ntasks=1
+# SBATCH --cpus-per-task=8
+# SBATCH --mem=8G
+
+# comment in/out lines as needed.
+
+echo "Starting job at $(date)"
 
 # Load environment
-module purge
-module load intel/2021.9.0
-module load intel-oneapi-mkl/2023.1.0
-module load mvapich2
-module load anaconda3
+source ~/scratch/interact.sh
+source ~/packages/sparc_env.sh
 
-source activate sparc
+cd ~/scratch/medford_project
 
-export ASE_SPARC_COMMAND="srun /home/hice1/vaggala3/scratch/SPARC/lib/sparc"
-export SPARC_PSP_PATH=/home/hice1/vaggala3/scratch/SPARC/psps
+########################################
+# CO calculation
+########################################
+# echo "Running CO calculation..."
+# cd co
+# python build_co.py
+# python co_energy.py
+# cd ..
 
-# Run workflow
+# ########################################
+# # PT(111) calculations
+# ########################################
+# echo "Running Pt(111) calculations..."
 
-# clean slab
-cd pt111/clean
-python build_pt111.py
-python clean_energy.py
+# # Clean
+# cd pt111/clean
+# python build_pt111.py
+# python clean_energy.py
+# cd ../..
 
-# atop
-cd ../atop
-python build_pt111_atop.py
-python atop_energy.py
+# # Atop
+# cd pt111/atop
+# python build_pt111_atop.py
+# python atop_energy.py
+# cd ../..
 
-# fcc hollow
-cd ../fcc_hollow
-python build_pt111_fcc_hollow.py
-python fcc_energy.py
+# # FCC Hollow
+# cd pt111/fcc_hollow
+# python build_pt111_fcc_hollow.py
+# python fcc_hollow_energy.py
+# cd ../..
 
-# CO reference
-cd ../../co
-python build_co.py
-python co_energy.py
-
-# analysis
-cd ../pt111
+# Analysis
+cd pt111
 python pt111_analysis.py
+cd ..
+
+########################################
+# CU(111) calculations
+########################################
+echo "Running Cu(111) calculations..."
+
+# Clean
+# cd cu111/clean
+# python build_cu111.py
+# python clean_energy.py
+# cd ../..
+
+# # Atop
+# cd cu111/atop
+# python build_cu111_atop.py
+# python atop_energy.py
+# cd ../..
+
+# # FCC Hollow
+# cd cu111/fcc_hollow
+# python build_cu111_fcc_hollow.py
+# python fcc_hollow_energy.py
+# cd ../..
+
+# Analysis
+cd cu111
+python cu111_analysis.py
+cd ..
+
+echo "Job finished at $(date)"

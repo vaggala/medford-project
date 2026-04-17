@@ -1,0 +1,12 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-17-2026 08:35:22
+Job ID:    4913512
+User ID:   vaggala3
+Account:   ece
+Job name:  run.sbatch
+Partition: pace-cpu
+QOS:       coe-ice
+---------------------------------------
+Starting job at Fri Apr 17 08:35:22 EDT 2026
+salloc: Pending job allocation 4913513
+salloc: job 4913513 queued and waiting for resources

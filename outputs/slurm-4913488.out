@@ -1,0 +1,69 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-17-2026 08:26:14
+Job ID:    4913488
+User ID:   vaggala3
+Account:   ece
+Job name:  run.sbatch
+Partition: pace-cpu
+QOS:       coe-ice
+---------------------------------------
+Starting job at Fri Apr 17 08:26:14 EDT 2026
+salloc: Pending job allocation 4913490
+salloc: job 4913490 queued and waiting for resources
+salloc: job 4913490 has been allocated resources
+salloc: Granted job allocation 4913490
+salloc: Waiting for resource configuration
+salloc: Nodes atl1-1-02-012-5-2 are ready for job
+srun: error: ioctl(TIOCGWINSZ): Inappropriate ioctl for device
+srun: error: Not using a pseudo-terminal, disregarding --pty option
+---------------------------------------
+Begin Slurm Prolog: Apr-17-2026 08:26:45
+Job ID:    4913490
+User ID:   vaggala3
+Account:   ece
+Job name:  interactive
+Partition: ice-cpu
+QOS:       coe-ice
+---------------------------------------
+salloc: Relinquishing job allocation 4913490
+salloc: Job allocation 4913490 has been revoked.
+
+Activating Modules:
+  1) intel-oneapi-tbb/2021.9.0
+
+
+CondaError: Run 'conda init' before 'conda deactivate'
+
+E_clean = -105557.384960 eV
+E_atop  = -106171.134200 eV
+E_fcc   = -106171.422426 eV
+E_CO    = -612.893267 eV
+
+Atop adsorption energy = -0.855973 eV
+FCC adsorption energy  = -1.144199 eV
+
+DFT predicts that the FCC site for Pt(111) is more stable than the atop site by 0.288 eV.
+This is close to the literature value of 0.25 eV.
+Running Cu(111) calculations...
+E_clean = -149062.193418 eV
+E_atop  = -149675.250546 eV
+E_fcc   = -149675.342639 eV
+E_CO    = -612.893267 eV
+
+Atop adsorption energy = -0.163861 eV
+FCC adsorption energy  = -0.255953 eV
+
+DFT predicts that the FCC site for Cu(111) is more stable than the atop site by 0.092 eV.
+Job finished at Fri Apr 17 08:26:56 EDT 2026
+---------------------------------------
+Begin Slurm Epilog: Apr-17-2026 08:26:56
+Job ID:        4913488
+User ID:       vaggala3
+Account:       ece
+Job name:      run.sbatch
+Resources:     cpu=1,mem=4G,node=1
+Rsrc Used:     cput=00:00:43,vmem=0,walltime=00:00:43,mem=112624K,energy_used=0
+Partition:     pace-cpu
+QOS:           coe-ice
+Nodes:         atl1-1-02-010-2-1
+---------------------------------------
