@@ -8,6 +8,7 @@ z_levels = sorted({round(atom.position[2], 8) for atom in slab})
 z_top = z_levels[-1]
 # print(z_top)
 
+
 top_atom = None
 for atom in slab:
     if abs(atom.position[2] - z_top) < 1e-6:

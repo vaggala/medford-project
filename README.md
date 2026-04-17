@@ -7,7 +7,7 @@ Computed adsorption energies across multiple binding sites (atop and hollow) and
 ### personal config (not everything will be reproducible): 
 run the following:\
 `source ~/scratch/interact.sh`  get compute node\
-`source ~/packages/sparc_env.sh`
+`source ~/packages/sparc_env.sh` use this for the notebook(s) as well
 
 ### want to run locally?
 run the following in the terminal:\
