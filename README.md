@@ -1,4 +1,4 @@
-CO Adsorption on Pt(111) and Cu(111)
+# CO Adsorption on Pt(111) and Cu(111)
 
 Modeled CO adsorption on Pt(111) and Cu(111) surfaces using DFT (SPARC + ASE), computing site-dependent adsorption energies (atop vs hollow) and comparing catalytic trends.
 
